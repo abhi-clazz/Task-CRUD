@@ -14,7 +14,7 @@ class EditOrder extends Component {
             cost:0,
             orders: []
         }
-        this.onChangeUserName = this.onChangeUsername.bind(this);
+        this.onChangeUserName = this.onChangeUserName.bind(this);
         this.onChangeProduct = this.onChangeProduct.bind(this);
         this.onChangeOutlet = this.onChangeOutlet.bind(this);
         this.onChangeQuantity = this.onChangeQuantity.bind(this);
@@ -42,14 +42,24 @@ class EditOrder extends Component {
        
     }
 
-    onChangeUser(e) {
-        this.setState({ name: e.target.value})
+    onChangeUserName(e) {
+        this.setState({ userName: e.target.value})
     }
     onChangeProduct(e) {
-        this.setState({ phonenumber: e.target.value})
+        this.setState({ product: e.target.value})
     }
     onChangeOutlet(e) {
-        this.setState({ reportingmanager: e.target.value})
+        this.setState({ outlet: e.target.value})
+    }
+    onChangeQuantity(e)
+    {
+        this.setState({ quantity: e.target.value})
+
+    }
+    onChangeCost(e)
+    {
+        this.setState({ cost: e.target.value})
+
     }
    
     onSubmit(e) {
@@ -81,7 +91,7 @@ class EditOrder extends Component {
                             required
                             className="form-control"
                             value={this.state.userName}
-                            onChange={this.onChangeUsername} >
+                            onChange={this.onChangeUserName} >
                             
                         </input>
                     </div>
@@ -109,7 +119,7 @@ class EditOrder extends Component {
                             type="text"
                             className="form-control"
                             value={this.state.quantity}
-                            onChange={this.onChangeOutlet}
+                            onChange={this.onChangeQuantity}
                         />
                     </div>
                     <div className="form-group">
@@ -118,7 +128,7 @@ class EditOrder extends Component {
                             type="text"
                             className="form-control"
                             value={this.state.cost}
-                            onChange={this.onChangeOutlet}
+                            onChange={this.onChangeCost}
                         />
                     </div>
                    
